@@ -4,12 +4,17 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Main from './components/Main'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Main />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+fetch('http://127.0.0.1:3001/get-all-posts')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    ReactDOM.render(
+      <React.StrictMode>
+        <Main posts={data} />
+      </React.StrictMode>,
+      document.getElementById('root')
+    );
+  })
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,6 +1,7 @@
 import React from 'react';
 import { PostType } from './Types';
 import { Typography, Grid, Card, ButtonBase, makeStyles, createStyles, Theme, Box } from '@material-ui/core';
+import { useHistory } from 'react-router';
 
 const useStyles = makeStyles((theme: Theme) => {
     return createStyles({
@@ -21,19 +22,22 @@ const useStyles = makeStyles((theme: Theme) => {
 
 export default function Post(props: PostType) {
 
-    const classes = useStyles()
+    const classes = useStyles();
 
-    const handleDate = new Date(props.date)
+    const handleDate = new Date(props.date);
     const date = generate2digits(handleDate.getDate()) + '.' + generate2digits(handleDate.getMonth() + 1) + '.' + handleDate.getFullYear()
+
+    const history = useHistory();
 
     function generate2digits(number: number): string {
         if (number < 10)
-            return '0' + number
-        return number.toString()
+            return '0' + number;
+        return number.toString();
     }
 
     function buttonClick(e: object) {
-        console.log(typeof e)
+        let path = '/a';
+        history.push(path);
     }
 
     return (

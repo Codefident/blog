@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { ReactNode } from 'react'
-import Bar from './Bar'
 import Post from './Post'
 import * as Types from './Types'
 import { Grid } from '@material-ui/core'
@@ -12,7 +11,6 @@ export default class Main extends Component<Types.MainType, {}, any> {
 
         return (
             <div>
-                <Bar />
                 <Grid
                     container
                     direction='column'

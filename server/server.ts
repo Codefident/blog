@@ -23,4 +23,8 @@ app.get('/get-all-posts', (req, res) => {
     })
 });
 
+app.get('/ddd', (req, res) => {
+    console.log('loliks')
+})
+
 app.listen(port, () => console.log('server running at :' + port));

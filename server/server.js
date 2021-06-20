@@ -19,4 +19,7 @@ app.get('/get-all-posts', function (req, res) {
         res.send(results);
     });
 });
+app.get('/ddd', function (req, res) {
+    console.log('loliks');
+});
 app.listen(port, function () { return console.log('server running at :' + port); });

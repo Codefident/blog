@@ -23,3 +23,8 @@ code {
     url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
     url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
+
+/*added by me*/
+html {
+  width: 100vw;
+}

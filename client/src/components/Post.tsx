@@ -23,8 +23,17 @@ export default function Post(props: PostType) {
 
     const classes = useStyles()
 
-    function buttonClick(e: any) {
-        console.log(e)
+    const handleDate = new Date(props.date)
+    const date = generate2digits(handleDate.getDate()) + '.' + generate2digits(handleDate.getMonth() + 1) + '.' + handleDate.getFullYear()
+
+    function generate2digits(number: number): string {
+        if (number < 10)
+            return '0' + number
+        return number.toString()
+    }
+
+    function buttonClick(e: object) {
+        console.log(typeof e)
     }
 
     return (
@@ -34,11 +43,11 @@ export default function Post(props: PostType) {
 
                     <Grid container direction='row' wrap='nowrap' spacing={1}>
 
-                        <Grid item>
+                        <Grid item xs>
                             <Box className={classes.box} />
                         </Grid>
 
-                        <Grid item xs={12} container direction='column' alignItems='flex-start'>
+                        <Grid item xs={8} container direction='column' alignItems='flex-start'>
                             <Grid item>
                                 <Typography variant='h5' gutterBottom>{props.title}</Typography>
                             </Grid>
@@ -47,10 +56,17 @@ export default function Post(props: PostType) {
                             </Grid>
                         </Grid>
 
+                        <Grid item xs container direction='column' justify='center' alignItems='center'>
+                            <Grid item>
+                                <Typography component='em'>{props.author}</Typography>
+                                <Typography>{date}</Typography>
+                            </Grid>
+                        </Grid>
+
                     </Grid>
 
                 </Card>
-            </ButtonBase >
-        </Grid >
+            </ButtonBase>
+        </Grid>
     );
 }

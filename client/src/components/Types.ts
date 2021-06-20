@@ -3,6 +3,7 @@ export type PostType = {
     author: string,
     date: Date,
     title: string,
+    header: string,
     text: string
 }
 

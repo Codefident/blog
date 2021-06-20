@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import { Home } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -27,7 +27,7 @@ export default function Bar() {
             <AppBar position='static'>
                 <Toolbar>
                     <IconButton edge='start' className={classes.menuButton} color='inherit'>
-                        <MenuIcon />
+                        <Home />
                     </IconButton>
                     <Typography variant='h5' className={classes.title}>
                         Codefident's blog

@@ -3,9 +3,10 @@ export type PostType = {
     author: string,
     date: Date,
     title: string,
-    header: string,
-    text: string
+    header: string
 }
+
+export type ShowPostType = PostType & { text: string }
 
 export type MainType = {
     posts: PostType[]

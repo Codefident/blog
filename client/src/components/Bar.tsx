@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { Home } from '@material-ui/icons';
 
 import { BrowserRouter as Router, useHistory } from "react-router-dom";
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -31,8 +32,12 @@ export default function Bar() {
         history.push(path);
     }
 
-    useEffect(() => { document.title = 'Blog';
-console.log('blog') });
+    function createPostButtonClick() {
+        let path = '/create-new-post';
+        history.push(path)
+    }
+
+    useEffect(() => { document.title = 'Blog'; });
 
     return (
         <div className={classes.root}>
@@ -44,6 +49,8 @@ console.log('blog') });
                     <Typography variant='h5' className={classes.title}>
                         Codefident's blog
                     </Typography>
+                    <Button color='inherit' onClick={createPostButtonClick}>Create new post</Button>
+                    <Button color='inherit'>Login</Button>
                 </Toolbar>
             </AppBar>
         </div>

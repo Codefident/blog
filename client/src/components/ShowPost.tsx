@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         padding: theme.spacing(2)
     },
     header: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        margin: '30px 0'
     }
 }))
 

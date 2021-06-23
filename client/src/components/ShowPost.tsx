@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         margin: 0
     },
     bars: {
-        height: '100vh',
         margin: 0
     },
     card: {

@@ -17,7 +17,7 @@ conn.connect(err => { if (err) console.log(err); });
 app.use(cors());
 
 app.get('/get-all-posts', (req, res) => {
-    conn.query('SELECT * FROM `posts`', (err, results, fields) => {
+    conn.query('SELECT * FROM `posts` ORDER BY date DESC', (err, results, fields) => {
         if (err) throw err;
         res.send(results);
     })

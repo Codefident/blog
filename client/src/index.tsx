@@ -10,7 +10,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useParams
 } from "react-router-dom";
 
 fetch('http://127.0.0.1:3001/get-all-posts')
@@ -24,10 +25,15 @@ fetch('http://127.0.0.1:3001/get-all-posts')
               <Bar />
               <Main posts={data} />
             </Route>
-            <Route path='/a'>
-              <Bar />
-              <ShowPost />
-            </Route>
+            <Route path='/show-post/:id' render={() => {
+              return (
+                <>
+                  <Bar />
+                  <ShowPost />
+                </>
+              )
+            }} />
+
           </Switch>
         </Router>
       </React.StrictMode>,

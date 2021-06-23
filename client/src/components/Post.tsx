@@ -26,6 +26,7 @@ export default function Post(props: PostType) {
 
     const handleDate = new Date(props.date);
     const date = generate2digits(handleDate.getDate()) + '.' + generate2digits(handleDate.getMonth() + 1) + '.' + handleDate.getFullYear()
+    const time = generate2digits(handleDate.getHours()) + ':' + generate2digits(handleDate.getMinutes())
 
     const history = useHistory();
 
@@ -36,7 +37,7 @@ export default function Post(props: PostType) {
     }
 
     function buttonClick(e: object) {
-        let path = '/a';
+        let path = `/show-post/${props.id}`;
         history.push(path);
     }
 
@@ -64,6 +65,7 @@ export default function Post(props: PostType) {
                             <Grid item>
                                 <Typography component='em'>{props.author}</Typography>
                                 <Typography>{date}</Typography>
+                                <Typography>{time}</Typography>
                             </Grid>
                         </Grid>
 

@@ -23,8 +23,12 @@ app.get('/get-all-posts', (req, res) => {
     })
 });
 
-app.get('/ddd', (req, res) => {
-    console.log('loliks')
+app.get('/show-post', (req, res) => {
+    const id = req.query.id;
+    conn.query(mysql.format('SELECT posts.author, posts.date, posts.title, posts.header, texts.text FROM posts INNER JOIN texts ON posts.id=texts.post_id WHERE posts.id=' + id), (err, results, fields) => {
+        if (err) throw err;
+        res.send(results[0]);
+    })
 })
 
 app.listen(port, () => console.log('server running at :' + port));
